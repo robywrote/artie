@@ -4,7 +4,7 @@ const squares = 5000;
 
 const palette = document.querySelector("#palette");
 
-let currentColor = "blue";
+let currentColor = "lightgray";
 
 const clearButton = document.querySelector("#clear-grid");
 clearButton.addEventListener("click", clearGrid);
@@ -16,6 +16,7 @@ function fillPalette() {
     console.log(color);
     const swatch = document.createElement("div");
     swatch.style.backgroundColor = color;
+    swatch.addEventListener("click", setCurrentColor);
     swatch.classList.add("swatch");
     palette.append(swatch);
   }
@@ -32,12 +33,19 @@ function buildGrid(squares) {
 }
 
 function clearGrid() {
+  currentColor = "lightgray";
   let painted = document.querySelectorAll(".painted");
   painted.forEach((e) => {
     e.style.background = "lightgray";
     e.classList.remove("painted");
     e.classList.add("item");
   });
+}
+
+function setCurrentColor(e) {
+  const swatch = e.target;
+  const color = swatch.style.backgroundColor;
+  currentColor = color;
 }
 
 function paint(e) {
