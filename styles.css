@@ -1,9 +1,16 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
 #grid-container {
   display: grid;
   grid-template-columns: repeat(250, 0.25rem);
   grid-template-rows: 0.25rem 0.25rem;
   grid-auto-rows: 0.25rem;
-  /* gap: 1px; */
 }
 
 #palette {

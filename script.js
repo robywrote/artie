@@ -4,13 +4,18 @@ const squares = 30000;
 
 const palette = document.querySelector("#palette");
 
-const gridColor = "darkgray";
+const gridColor = "darkslateblue";
 let currentColor = gridColor;
 
 const clearButton = document.querySelector("#clear-grid");
 clearButton.addEventListener("click", clearGrid);
 
-const paletteColors = ["cyan", "magenta", "yellow", "black"];
+const paletteColors = [
+  "lightcoral",
+  "cornflowerblue",
+  "moccasin",
+  "darkseagreen",
+];
 
 function fillPalette() {
   for (const color of paletteColors) {
