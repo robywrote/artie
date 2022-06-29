@@ -1,21 +1,14 @@
 "use strict";
 
-const squares = 30000;
-
-const palette = document.querySelector("#palette");
-
-const gridColor = "darkslateblue";
-let currentColor = gridColor;
-
 const clearButton = document.querySelector("#clear-grid");
 clearButton.addEventListener("click", clearGrid);
 
-const paletteColors = [
-  "lightcoral",
-  "cornflowerblue",
-  "moccasin",
-  "darkseagreen",
-];
+const squares = 30000;
+const gridColor = "darkslateblue";
+let currentColor = gridColor;
+
+const palette = document.querySelector("#palette");
+const paletteColors = ["lightcoral", "skyblue", "moccasin", "palegreen"];
 
 function fillPalette() {
   for (const color of paletteColors) {
@@ -30,11 +23,11 @@ function fillPalette() {
 
 function buildGrid(squares) {
   for (let i = 0; i < squares; i++) {
-    const gridContainer = document.getElementById("grid-container");
-    const newDiv = document.createElement("div");
-    newDiv.style.backgroundColor = gridColor;
-    newDiv.addEventListener("mouseover", paint);
-    gridContainer.appendChild(newDiv);
+    const gridContainer = document.querySelector("#grid-container");
+    const square = document.createElement("div");
+    square.style.backgroundColor = gridColor;
+    square.addEventListener("mouseover", paint);
+    gridContainer.appendChild(square);
   }
 }
 

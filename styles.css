@@ -18,4 +18,10 @@
   grid-template-columns: 1rem 1rem;
   grid-template-rows: 1rem 1rem;
   gap: 5px;
+  background-color: lightslategray;
+  border: 5px solid lightslategray;
+}
+
+body {
+  background-color: lightsteelblue;
 }
