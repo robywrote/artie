@@ -1,15 +1,16 @@
 "use strict";
 
-const squares = 5000;
+const squares = 30000;
 
 const palette = document.querySelector("#palette");
 
-let currentColor = "lightgray";
+const gridColor = "darkgray";
+let currentColor = gridColor;
 
 const clearButton = document.querySelector("#clear-grid");
 clearButton.addEventListener("click", clearGrid);
 
-const paletteColors = ["red", "green", "blue", "black"];
+const paletteColors = ["cyan", "magenta", "yellow", "black"];
 
 function fillPalette() {
   for (const color of paletteColors) {
@@ -26,19 +27,18 @@ function buildGrid(squares) {
   for (let i = 0; i < squares; i++) {
     const gridContainer = document.getElementById("grid-container");
     const newDiv = document.createElement("div");
-    newDiv.classList.add("item");
+    newDiv.style.backgroundColor = gridColor;
     newDiv.addEventListener("mouseover", paint);
     gridContainer.appendChild(newDiv);
   }
 }
 
 function clearGrid() {
-  currentColor = "lightgray";
+  currentColor = gridColor;
   let painted = document.querySelectorAll(".painted");
   painted.forEach((e) => {
-    e.style.background = "lightgray";
+    e.style.background = gridColor;
     e.classList.remove("painted");
-    e.classList.add("item");
   });
 }
 
@@ -51,7 +51,6 @@ function setCurrentColor(e) {
 function paint(e) {
   const item = e.target;
   item.style.background = currentColor;
-  item.classList.remove("item");
   item.classList.add("painted");
 }
 
