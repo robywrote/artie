@@ -1,0 +1,18 @@
+#grid-container {
+  display: grid;
+  grid-template-columns: repeat(100, 0.5rem);
+  grid-template-rows: 0.5rem 0.5rem;
+  grid-auto-rows: 0.5rem;
+  gap: 1px;
+}
+
+#palette {
+  display: grid;
+  grid-template-columns: 1rem 1rem;
+  grid-template-rows: 1rem 1rem;
+  gap: 5px;
+}
+
+.item {
+  background: lightgray;
+}
