@@ -3,7 +3,10 @@
 const clearButton = document.querySelector("#clear-grid");
 clearButton.addEventListener("click", clearGrid);
 
-const squares = 30000;
+const squares = 32768;
+const rowsize = 256;
+const gridContainer = document.querySelector("#grid-container");
+document.documentElement.style.setProperty("--rowsize", rowsize);
 const gridColor = "darkslateblue";
 let currentColor = gridColor;
 
@@ -23,7 +26,6 @@ function fillPalette() {
 
 function buildGrid(squares) {
   for (let i = 0; i < squares; i++) {
-    const gridContainer = document.querySelector("#grid-container");
     const square = document.createElement("div");
     square.style.backgroundColor = gridColor;
     square.addEventListener("mouseover", paint);
