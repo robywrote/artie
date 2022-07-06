@@ -8,8 +8,10 @@
 
 #grid-container {
   display: grid;
-  grid-template-columns: repeat(var(--rowsize), 0.25rem);
-  grid-auto-rows: 0.25rem;
+  grid-template-columns: repeat(var(--rowsize), var(--squaresize));
+  /* grid-template-columns: repeat(var(--rowsize), 0.25rem); */
+  grid-auto-rows: var(--squaresize);
+  /* grid-auto-rows: 0.25rem; */
 }
 
 #palette {
